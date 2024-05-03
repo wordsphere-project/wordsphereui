@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace WordsphereUi\WordsphereUi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WordsphereUiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'wordsphereui';
 
     public $description = 'My command';
 
