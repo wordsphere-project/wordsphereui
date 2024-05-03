@@ -8,12 +8,11 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Symfony\Component\Finder\Finder;
 use WordsphereUi\WordsphereUi\Commands\WordsphereUiCommand;
+
 use function basename;
-use function dirname;
 
 class WordsphereUiServiceProvider extends PackageServiceProvider
 {
-
     public function boot(): void
     {
         parent::boot();
@@ -24,7 +23,7 @@ class WordsphereUiServiceProvider extends PackageServiceProvider
     public function registerViews(): void
     {
         $finder = new Finder();
-        $finder->directories()->in(__DIR__ . '/Components/*/')->name('views');
+        $finder->directories()->in(__DIR__.'/Components/*/')->name('views');
 
         foreach ($finder as $directory) {
             $name = Str::kebab(basename($directory->getPath()));
