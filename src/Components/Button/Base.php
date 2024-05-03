@@ -9,10 +9,8 @@ use Illuminate\View\View;
 
 class Base extends Component
 {
-
     public function render(): View
     {
         return view('wordsphereui::button.base');
     }
-
 }
