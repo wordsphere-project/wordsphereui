@@ -1,16 +1,16 @@
 <?php
 
-namespace WordsphereUi\WordsphereUi\Facades;
+namespace Wordsphere\Ui\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \WordsphereUi\WordsphereUi\WordsphereUi
+ * @see \Wordsphere\Ui\WordsphereUi
  */
 class WordsphereUi extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \WordsphereUi\WordsphereUi\WordsphereUi::class;
+        return \Wordsphere\Ui\WordsphereUi::class;
     }
 }

@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
-namespace WordsphereUi\WordsphereUi;
+namespace Wordsphere\Ui;
 
-use WordsphereUi\WordsphereUi\Components\Button\Base;
+use Wordsphere\Ui\Components\Button\Base;
+use Wordsphere\Ui\Components\Button\Mini;
 
 class WordsphereUi
 {
+    /**
+     * @return array<string,array<string,string|class-string>>
+     */
     public static function defaultComponents(): array
     {
         return [
@@ -15,6 +19,10 @@ class WordsphereUi
                 'class' => Base::class,
                 'alias' => 'button',
             ],
+            'button-mini' => [
+                'class' => Mini::class,
+                'alias' => 'button-mini',
+            ]
         ];
     }
 }

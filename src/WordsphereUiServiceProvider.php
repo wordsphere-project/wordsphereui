@@ -1,13 +1,13 @@
 <?php
 
-namespace WordsphereUi\WordsphereUi;
+namespace Wordsphere\Ui;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Symfony\Component\Finder\Finder;
-use WordsphereUi\WordsphereUi\Commands\WordsphereUiCommand;
+use Wordsphere\Ui\Commands\WordsphereUiCommand;
 
 use function basename;
 
@@ -15,6 +15,7 @@ class WordsphereUiServiceProvider extends PackageServiceProvider
 {
     public function boot(): void
     {
+
         parent::boot();
         $this->registerViews();
         $this->registerBladeComponents();
@@ -27,7 +28,7 @@ class WordsphereUiServiceProvider extends PackageServiceProvider
 
         foreach ($finder as $directory) {
             $name = Str::kebab(basename($directory->getPath()));
-            $this->loadViewsFrom($directory->getPath(), "worsphereui-{$name}");
+            $this->loadViewsFrom($directory->getPathname(), "wordsphereui-{$name}");
         }
     }
 
@@ -50,7 +51,6 @@ class WordsphereUiServiceProvider extends PackageServiceProvider
         $package
             ->name('wordsphereui')
             ->hasConfigFile()
-            ->hasViews()
             ->hasMigration('create_wordsphereui_table')
             ->hasCommand(WordsphereUiCommand::class);
     }

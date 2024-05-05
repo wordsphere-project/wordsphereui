@@ -1,0 +1,24 @@
+{
+  "name": "wordsphereui",
+  "version": "1.0.0",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+      "tst": "tsc"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "path": "^0.12.7",
+    "pathe": "^1.1.2",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

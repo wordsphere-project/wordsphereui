@@ -16,8 +16,14 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="WordsphereUi Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Browser">
+            <directory suffix="Test.php">tests/Browser</directory>
+        </testsuite>
+        <testsuite name="Unit Components">
+            <directory suffix="Test.php">src/Components/**/tests/Unit</directory>
         </testsuite>
     </testsuites>
     <coverage>
@@ -34,5 +40,13 @@
         <include>
             <directory suffix=".php">./src</directory>
         </include>
+        <exclude>
+            <file>src/config.php</file>
+            <file>src/WordsphereUiServiceProvider.php</file>
+            <file>src/WordsphereUi.php</file>
+            <directory suffix="Test.php">src</directory>
+            <directory suffix=".php">src/lang/</directory>
+            <directory suffix=".blade.php">src/resources/views/</directory>
+        </exclude>
     </source>
 </phpunit>

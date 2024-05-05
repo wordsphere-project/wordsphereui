@@ -2,18 +2,39 @@
 
 declare(strict_types=1);
 
-namespace WordsphereUi\WordsphereUi\Components\Button;
+namespace Wordsphere\Ui\Components\Button;
 
+use Closure;
 use Illuminate\View\Component;
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
+use Wordsphere\Ui\View\WordsphereUiComponent;
+use function compact;
+use function dd;
+use function view;
 
-class Base extends Component
+class Base extends WordsphereUiComponent
 {
 
-    public string $sizeClasses = '';
 
-    public function render(): View
+    public function blade(): View
     {
-        return view('wordsphereui::button.base');
+        return view('wordsphereui-button::base');
     }
+
+    public function render(): Closure
+    {
+        return function (array $data) {
+            return $this->blade()->with($this->setupSize($data));
+        };
+
+
+    }
+
+    private function runWordsphereUiComponents(array $data): array
+    {
+
+    }
+
+
+
 }

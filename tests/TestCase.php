@@ -1,30 +1,41 @@
 <?php
 
-namespace WordsphereUi\WordsphereUi\Tests;
+namespace Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\View\Component;
 use Orchestra\Testbench\TestCase as Orchestra;
-use WordsphereUi\WordsphereUi\WordsphereUiServiceProvider;
+use Wordsphere\Ui\WordsphereUiServiceProvider;
 
 class TestCase extends Orchestra
 {
+    use InteractsWithViews;
+
+    public Component $component;
+
     protected function setUp(): void
     {
-        parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'WordsphereUi\\WordsphereUi\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        $this->afterApplicationCreated(function () {
+            Artisan::call('view:clear');
+        });
+
+        $this->beforeApplicationDestroyed(function () {
+            Artisan::call('view:clear');
+        });
+
+        parent::setUp();
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             WordsphereUiServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
 

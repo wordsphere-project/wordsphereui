@@ -1,6 +1,6 @@
 <?php
 
-namespace WordsphereUi\WordsphereUi\Commands;
+namespace Wordsphere\Ui\Commands;
 
 use Illuminate\Console\Command;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace WordsphereUi\WordsphereUi\Database\Factories;
+namespace Wordsphere\Ui\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
