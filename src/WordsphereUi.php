@@ -22,7 +22,7 @@ class WordsphereUi
             'button-mini' => [
                 'class' => Mini::class,
                 'alias' => 'button-mini',
-            ]
+            ],
         ];
     }
 }

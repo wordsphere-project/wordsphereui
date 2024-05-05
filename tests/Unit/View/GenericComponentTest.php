@@ -5,14 +5,16 @@ use Illuminate\View\View;
 use Tests\TestCase;
 use Wordsphere\Ui\View\WordsphereUiComponent;
 
-enum GenericComponentSize {
-
+enum GenericComponentSize
+{
 }
 
-class GenericComponent extends WordsphereUiComponent {
-
+class GenericComponent extends WordsphereUiComponent
+{
     public mixed $size = null;
+
     public mixed $sizeClasses = null;
+
     public function blade(): View
     {
         return view('generic');
@@ -25,17 +27,14 @@ class GenericComponent extends WordsphereUiComponent {
 beforeEach(function (): void {
 
     /** @var TestCase $this */
-
     $this->component = (new GenericComponent())->withName('generic');
     Blade::component(GenericComponent::class, 'generic');
 
 });
 
-
 test('it can create a wordsphere component', function (): void {
 
     /** @var TestCase $this */
-
     expect($this->component)->toBeInstanceOf(WordsphereUiComponent::class);
 
 });
@@ -43,7 +42,7 @@ test('it can create a wordsphere component', function (): void {
 test('it can change the attributes bag', function (): void {
 
     $this->component->withAttributes([
-        'size' => 'sm'
+        'size' => 'sm',
     ]);
 
     expect($this->component->attributes->get('size'))

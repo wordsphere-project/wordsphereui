@@ -7,10 +7,8 @@ use Illuminate\View\View;
 
 class Mini extends Component
 {
-
     public function render(): View
     {
         return view('wordsphereui-button::mini');
     }
-
 }

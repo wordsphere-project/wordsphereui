@@ -3,5 +3,5 @@
 use Workbench\App\Providers\WorkbenchServiceProvider;
 
 return [
-    WorkbenchServiceProvider::class
+    WorkbenchServiceProvider::class,
 ];

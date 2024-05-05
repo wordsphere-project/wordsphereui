@@ -1,15 +1,13 @@
 <?php
 
-
 use Illuminate\Support\Facades\Blade;
-use Illuminate\View\ComponentAttributeBag;
 use Wordsphere\Ui\Components\Button\Base;
 
 beforeEach(function () {
     $this->component = (new Base())->withName('button');
 });
 
-test('it runs the test', function() {
+test('it runs the test', function () {
     expect(true)->toBeTrue();
 });
 
@@ -18,7 +16,7 @@ test('it should have properties in component', function () {
     expect($this->component)->toHaveProperties([
         'full',
         'size',
-        'sizeClasses'
+        'sizeClasses',
     ]);
 
     expect($this->component->full)->toBeFalse();
