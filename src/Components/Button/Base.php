@@ -34,7 +34,4 @@ class Base extends WordsphereUiComponent
     {
 
     }
-
-
-
 }
